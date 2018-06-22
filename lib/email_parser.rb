@@ -11,7 +11,7 @@ class EmailParser
 
   def parse
     result = []
-    emails_array = @emails.split(", ") || @emails.split(" ")
+    emails_array = @emails.delete(",").split(" ")
 
     emails_array.each { |email| result << email unless result.include?(email) }
     result
