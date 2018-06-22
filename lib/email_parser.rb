@@ -14,6 +14,7 @@ class EmailParser
     emails_array = @emails.split(", ") ||= @emails.split(" ")
 
     emails_array.each { |email| result << email unless result.include?(email) }
+    result
   end
 
 end
