@@ -10,13 +10,10 @@ class EmailParser
   end
 
   def parse
-    result = nil
-    if @emails.include?(",")
-      result = @emails.split(", ")
-    else
-      result = @emails.split(" ")
-    end
-    result
+    result = []
+    emails_array = @emails.split(", ") ||= @emails.split(" ")
+
+    emails_array.each { |email| result << email unless result.include?(email) }
   end
 
 end
