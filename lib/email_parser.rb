@@ -11,7 +11,7 @@ class EmailParser
 
   def parse
     result = nil
-    if @emails.include(",")
+    if @emails.include?(",")
       result = @emails.split(", ")
     else
       result = @emails.split(" ")
